@@ -3,6 +3,7 @@ package name.littlediv.likezhihu.http;
 import name.littlediv.likezhihu.utils.Constant;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * Created by win7 on 2016/6/12.
@@ -18,6 +19,7 @@ public class RetrofitManager {
                 apiService= new Retrofit.Builder()
                         .baseUrl(Constant.BASEURL)
                         .addConverterFactory(GsonConverterFactory.create())
+//                        .addConverterFactory(ScalarsConverterFactory.create())
                         .client(OkhttpManager.client)
                         .build().create(APIService.class);
             }
